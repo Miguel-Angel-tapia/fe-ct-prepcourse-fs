@@ -126,10 +126,16 @@ function esEntero(num) {
   // De lo contrario, retorna false.
   // Tu código:
 
-  if ((num >= 0.1 && num <= 0.9) || (num >= -0.1 && num <= -0.9)) {
-    return false;
-  } else {
+  // if ((num >= 0.1 && num <= 0.9) || (num >= -0.1 && num <= -0.9)) {
+  //  return false;
+  // } else {
+  //  return true;
+  // }
+  let entero = Math.round(num);
+  if (num === entero) {
     return true;
+  } else {
+    return false;
   }
 }
 
