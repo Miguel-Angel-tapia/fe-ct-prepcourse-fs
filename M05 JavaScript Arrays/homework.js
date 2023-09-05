@@ -169,9 +169,9 @@ function todosIguales(array) {
   // Si todos los elementos del arreglo son iguales, retornar true.
   // Caso contrario retornar false.
   // Tu código:
-  let iguales = [0];
+  let iguales = array[0];
   for (let i = 1; i < array.length; i++) {
-    if (array[i] === iguales) {
+    if (iguales === array[i]) {
       return true;
     } else {
       return false;
@@ -180,10 +180,6 @@ function todosIguales(array) {
 }
 
 function mesesDelAño(array) {
-  // El arreglo contiene algunos meses del año desordenados. Debes recorrerlo, buscar los meses "Enero",
-  // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
-  // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
-  // Tu código:
   let mesesOrdenados = [];
   for (let i = 0; i < array.length; i++) {
     let meses = array[i];
@@ -191,7 +187,15 @@ function mesesDelAño(array) {
       mesesOrdenados.push(meses);
     }
   }
-  return mesesOrdenados;
+  if (
+    mesesOrdenados.includes("Enero") &&
+    mesesOrdenados.includes("Marzo") &&
+    mesesOrdenados.includes("Noviembre")
+  ) {
+    return mesesOrdenados;
+  } else {
+    return "No se encontraron los meses pedidos";
+  }
 }
 
 function tablaDelSeis() {
@@ -232,6 +236,17 @@ function breakStatement(num) {
   // la ejecución y retornar el string: "Se interrumpió la ejecución".
   // [PISTA]: utiliza el statement 'break'.
   // Tu código:
+  let numAumentado = [];
+  for (let i = 0; i < 10; i++) {
+    if (num === i) {
+      return "Se interrumpió la ejecución";
+      break;
+    }
+    num += 2;
+    numAumentado.push(num);
+  }
+
+  return numAumentado;
 }
 
 function continueStatement(num) {
@@ -241,6 +256,15 @@ function continueStatement(num) {
   // se continua con la siguiente iteración.
   // [PISTA]: utiliza el statement 'continue'.
   // Tu código:
+  nuevoArray = [];
+  for (let i = 0; i < 10; i++) {
+    if (i === 5) {
+      continue;
+    }
+    num += 2;
+    nuevoArray.push(num);
+  }
+  return nuevoArray;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
